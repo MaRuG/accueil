@@ -11,7 +11,7 @@
 # Author:
 #   Ak1ra
 
-repo  = "username/repository"
+repo  = "MaRuG/practice"
 
 module.exports = (robot) ->
   github = require('githubot')(robot)
