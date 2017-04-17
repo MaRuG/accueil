@@ -25,7 +25,7 @@ module.exports = (robot) ->
       text = texts.join '\n'
       msg.reply "I'm listing up your issues\n#{text}"
 
-  robot.respond /issue create (.+) body (.+))/i, (msg) ->
+  robot.respond /issue create (.+) body (.+)/i, (msg) ->
     who = msg.message.user.name
     title= msg.match[1]
     body = msg.match[3]
@@ -42,4 +42,4 @@ module.exports = (robot) ->
     github.patch "/repos/#{repo}/issues/#{msg.match[1]}", {state: "closed"}, (issue, error) ->
       if error then console.log error
       text = "OK. I closed #{issue.title} issue"
-msg.reply text
+      msg.reply text
