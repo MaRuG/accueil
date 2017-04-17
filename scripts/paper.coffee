@@ -32,7 +32,7 @@ module.exports = (robot) ->
       if date
         days = parseInt (moment(date, 'YYYY/MM/DD') - today) / 86400000
         str.push "#{THESIS_JP[key]}の締切まで #{days} 日"
-    return str.join('、') + 'です'
+    return str.join('、') + 'です' + '進捗はどうなんですかね～～？？'
 
   robot.respond /thesis$/i, (msg) ->
     str = dead_line()
