@@ -5,6 +5,7 @@
   "author": "MaRuG <marug4580@gmail.com>",
   "description": "A simle helpful robot for us",
   "dependencies": {
+    "cron": "^1.2.1",
     "easy-table": "^1.1.0",
     "githubot": "^1.0.1",
     "hubot": "^2.19.0",
@@ -20,7 +21,8 @@
     "hubot-scripts": "^2.17.2",
     "hubot-shipit": "^0.2.0",
     "hubot-slack": "^4.3.4",
-    "moment": "^2.18.1"
+    "moment": "^2.18.1",
+    "props": "^0.3.0"
   },
   "engines": {
     "node": "0.10.x"
