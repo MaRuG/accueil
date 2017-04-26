@@ -4,7 +4,6 @@
 # Commands:
 #   hubot semi         - 次のゼミの情報を表示
 #   hubot semi list    - 今後1ヶ月のゼミの情報を表示
-#   hubot semi changes - 日時が変更になったゼミの一覧を表示
 
 fs = require('fs')
 moment = require('moment')
@@ -13,7 +12,7 @@ table = require('easy-table')
 
 module.exports = (robot) ->
   ERR_MSG = 'ゼミの日時が設定されていません。'
-  NIL_MSG = '結果はありません。'
+  NIL_MSG = 'xxxxxxxxxxxxxxxxxx'
 
   loadJSON = ->
     try
@@ -67,16 +66,3 @@ module.exports = (robot) ->
       t.newRow()
       date.add(1, 'weeks')
     msg.reply('```\n' + t.print().trim() + '\n```')
-
-  robot.respond /semi\s+changes$/i, (msg) ->
-    json = loadJSON()
-    unless json
-      return msg.reply(ERR_MSG)
-    t = new table
-    for i in json.changes
-      t.cell('From', i.from)
-      t.cell('To', '→ ' +i.to )
-      t.newRow()
-    if t.rows.length > 0
-      msg.reply('```\n' + t.print().trim() + '\n```')
-    msg.reply(NIL_MSG)
