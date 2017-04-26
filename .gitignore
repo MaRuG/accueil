@@ -1,7 +1,6 @@
 node_modules
 .DS_Store*
 .hubot_history
-data
 .editorconfig
 hubot-scripts.json
 
