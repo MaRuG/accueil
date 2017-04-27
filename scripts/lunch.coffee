@@ -27,7 +27,7 @@ module.exports = (robot) ->
     ]
     msg.reply "#{lunch}"
 
-# #your_channelと言う部屋に、平日の13:00時に実行
+
   new cronJob('0 40 12 * * 0-5', () ->
     say = '昼飯の時間ぜよ！' + random [
       '一平ソバ'
