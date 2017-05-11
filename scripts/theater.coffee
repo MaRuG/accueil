@@ -17,7 +17,7 @@ module.exports = (robot) ->
   table = require 'text-table'
   eaw = require 'eastasianwidth'
 
-  THEATER_IDS = JSON.parse(process.env.HUBOT_THEATER_IDS ? '["11652","11610", "11625", "11158", "11643"]')
+  THEATER_IDS = JSON.parse(process.env.HUBOT_THEATER_IDS ? '["11652","11610", "11625"]')
 
   robot.respond /theater$/i, (res) ->
     THEATER_IDS.reduce(((promise, theaterId) ->
