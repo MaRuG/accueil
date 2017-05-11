@@ -16,6 +16,18 @@ random = require('hubot').Response::random
 
 module.exports = (robot) ->
 
+  send = (channel, msg) ->
+    robot.send {room: channel}, msg
+
+  say = '昼飯の時間ぜよ！' + random [
+    '一平ソバ'
+    '清華'
+    'コンビニ'
+    'スエヒロ'
+    '東館食堂'
+    'サクラキッチン'
+  ]
+
   robot.hear /(lunch)/i, (msg) ->
     lunch = msg.random [
       '一平ソバ'
@@ -28,22 +40,14 @@ module.exports = (robot) ->
     msg.reply "#{lunch}"
 
 
-  cronjob = new cronJob(
-    say = '昼飯の時間ぜよ！' + random [
-      '一平ソバ'
-      '清華'
-      'コンビニ'
-      'スエヒロ'
-      '東館食堂'
-      'サクラキッチン'
-    ]
-    cronTime: '0 30 19 * * 1-5'
-    start:    true
-    timeZone: "Asia/Tokyo"
-    onTick: ->
-      robot.send {room: "#12th-member"}, say
-  )
+  new cronJob('0 30 12 * * 1-5' ->
+      send '#12th-member', say
+  ).start
   
+  new cronJob('0 30 20 * * 1-5', () ->
+    send '#12th-member', "@here テストなので無視でよろ"
+  ).start()
+
 #  cronjob =new cronJob(
 #    cronTime: '0 03 12 * * 0-5',() => 
 #    say = '昼飯の時間ぜよ！' + random [
