@@ -2,10 +2,10 @@
 #   電車遅延情報をSlackに投稿する
 #
 # Commands:
-#   hubot train < kaoru | yuri | all > - Return train info
+#   hubot train < maeda | all > - Return train info
 #
-# Author:
-#   Kaoru Hotate
+# crontimeによって, 7~23の3時間毎に,遅延情報
+#
 
 cheerio = require 'cheerio-httpcli'
 cronJob = require('cron').CronJob
@@ -62,7 +62,7 @@ module.exports = (robot) ->
   #       info = $('.trouble p').text()
   #       msg.send "#{title}は遅れている。zamaaaaaaaaaaaaaaaa! \n#{info}"
 
-  new cronJob('0 0 7-23/3 * * 1-5', () ->
+  new cronJob('0 0 6-23/3 * * 1-5', () ->
     # 中央線
     jr_chu = 'http://transit.yahoo.co.jp/traininfo/detail/38/0/'
     # 京浜東北線
