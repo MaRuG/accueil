@@ -28,7 +28,7 @@ module.exports = (robot) ->
     msg.reply "#{lunch}"
 
 
-  new cronJob('0 40 12 * * 0-5', () ->
+  cronjob = new cronJob(
     say = '昼飯の時間ぜよ！' + random [
       '一平ソバ'
       '清華'
@@ -37,8 +37,12 @@ module.exports = (robot) ->
       '東館食堂'
       'サクラキッチン'
     ]
-    send '#12th-member', say
-  ).start()
+    cronTime: '0 30 19 * * 1-5'
+    start:    true
+    timeZone: "Asia/Tokyo"
+    onTick: ->
+      robot.send {room: "#12th-member"}, say
+  )
   
 #  cronjob =new cronJob(
 #    cronTime: '0 03 12 * * 0-5',() => 
