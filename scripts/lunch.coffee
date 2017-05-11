@@ -41,12 +41,12 @@ module.exports = (robot) ->
 
 
   new cronJob('0 30 12 * * 1-5', () ->
-      send '#12th-member', say
+    send '#12th-member', say
   ).start
   
-  new cronJob('0 30 20 * * 1-5', () ->
-    send '#12th-member', "@here テストなので無視でよろ"
-  ).start()
+#  new cronJob('0 30 20 * * 1-5', () ->
+#    send '#12th-member', "@here テストなので無視でよろ"
+#  ).start()
 
 #  cronjob =new cronJob(
 #    cronTime: '0 03 12 * * 0-5',() => 

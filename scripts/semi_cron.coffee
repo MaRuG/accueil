@@ -11,7 +11,7 @@ moment = require('moment')
 props = require('props')
 
 module.exports = (robot) ->
-  ROOM = 'member'
+  ROOM = '#12th-member'
   NTF_MSG = '明日は全体ゼミです。'
 
   loadJSON = ->
