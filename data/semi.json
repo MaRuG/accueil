@@ -13,14 +13,14 @@
 	  ["上岡", "長田"],
       ["加藤", "上戸"], 
 	  ["金子", "城倉"],
-      ["田口", "坂野","前田"],
+      ["田口", "坂野", "前田"],
       ["市木", "岩本"]
     ],
 	"accounts": [
 	  ["@ryo", "@sho5"],
 	  ["@katoko", "@kamito"],
 	  ["@kaneko", "@slankdev"],
-	  ["@taguchi", "banno", "@sho5"],
+	  ["@taguchi", "@banno", "@sho5"],
 	  [ "@seiyaichiki", "@iwamotoyuki"]
 	]
   }
