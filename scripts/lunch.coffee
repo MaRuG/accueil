@@ -11,52 +11,13 @@
 #  Akira 
 
 cronJob = require('cron').CronJob
-random = require('hubot').Response::random
-
 
 module.exports = (robot) ->
 
-  robot.hear /(lunch)/i, (msg) ->
-    lunch = msg.random [
-      '一平ソバ'
-      '清華'
-      'コンビニ'
-      'スエヒロ'
-      '東館食堂'
-      'サクラキッチン'
-    ]
-    msg.reply "#{lunch}"
-
-
   cronjob = new cronJob(
-    say = '昼飯の時間ぜよ！' + random [
-      '一平ソバ'
-      '清華'
-      'コンビニ'
-      'スエヒロ'
-      '東館食堂'
-      'サクラキッチン'
-    ]
-    cronTime: '0 30 19 * * 1-5'
-    start:    true
-    timeZone: "Asia/Tokyo"
-    onTick: ->
-      robot.send {room: "#12th-member"}, say
+    cronTime: "0 30 8 * * tue"    # 実行時間
+    start:    true                # すぐにcronのjobを実行するか
+    timeZone: "Asia/Tokyo"        # タイムゾーン指定
+    onTick: ->                    # 時間が来た時に実行する処理
+      robot.send {room: "#general"}, "今日はハグの日ですよ！"
   )
-  
-#  cronjob =new cronJob(
-#    cronTime: '0 03 12 * * 0-5',() => 
-#    say = '昼飯の時間ぜよ！' + random [
-#      "一平ソバ"
-#	  "清華"
-#      "コンビニ"
-#	  "スエヒロ"
-#	  "東館食堂"
-#	  "サクラキッチン"
-#    ]
-#    user = {room: '#12th-member'}
-#	start: true
-#    timeZone: "Asia/Tokyo"
-#	onTick: ->
-#      robot.send user, say
-#  )
