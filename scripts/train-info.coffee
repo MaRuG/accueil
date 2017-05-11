@@ -11,9 +11,8 @@ cheerio = require 'cheerio-httpcli'
 cronJob = require('cron').CronJob
 
 module.exports = (robot) ->
-  
-  ROOM = '#12th-member'
-  str = searchTrainCron(jr_chu) + "\n" + searchTrainCron(jr_kt) + "\n" + searchTrainCron(jr_ym)
+
+  ROOM = "#12th-member"
 
   searchAllTrain = (msg) ->
     # send HTTP request
@@ -32,7 +31,8 @@ module.exports = (robot) ->
             result += "- " + trouble + "\r\n"
           msg.send "#{title}\r\n#{result}"
 
-  robot.respond /train$/i, (msg) ->
+  robot.respond /train (.+)/i, (msg) ->
+    target = msg.match[1]
     # 京浜東北線
     jr_kt = 'http://transit.yahoo.co.jp/traininfo/detail/22/0/'
     # 山手線
@@ -44,13 +44,20 @@ module.exports = (robot) ->
     # 中央線
     jr_chu = 'http://transit.yahoo.co.jp/traininfo/detail/38/0/'
 
-    searchTrain(jr_ym, msg)
-    searchTrain(jr_kt, msg)
-    searchTrain(jr_chu, msg)
-      
-    # searchAllTrain(msg)
+    if target == "maeda"
+      searchTrain(jr_ym, msg)
+      searchTrain(jr_kt, msg)
+      searchTrain(jr_chu, msg)
+    else if target == "katoko"
+      searchTrain(jr_ss, msg)
+      searchTrain(jr_sk, msg)
+      searchTrain(jr_chu, msg)
+    else if target == "all"
+      searchAllTrain(msg)
+    else
+      msg.send "#{target}は検索できないよ。Σ (￣ロ￣|||)"
 
-  searchTrain = (url, msg) ->
+  searchTrain = (url,msg) ->
     cheerio.fetch url, (err, $, res) ->
       title = "#{$('h1').text()}"
       if $('.icnNormalLarge').length
@@ -60,7 +67,17 @@ module.exports = (robot) ->
         msg.send "#{title}は遅れている。zamaaaaaaaaaaaaaaaa! \n#{info}"
 
   new cronJob('0 0 21 * * 1-5', () ->
-    robot.send({ room: ROOM}, str)
+    # 中央線
+    jr_chu = 'http://transit.yahoo.co.jp/traininfo/detail/38/0/'
+    # 京浜東北線
+    jr_kt = 'http://transit.yahoo.co.jp/traininfo/detail/22/0/'
+    # 山手線
+    jr_ym = 'http://transit.yahoo.co.jp/traininfo/detail/21/0/'
+    searchTrainCron(jr_chu)
+    searchTrainCron(jr_kt)
+    searchTrainCron(jr_ym)
+    str = searchTrainCron(jr_chu) + "\n" + searchTrainCron(jr_kt) + "\n" + searchTrainCron(jr_ym)
+    robot.send( '#12th-member', str)
   ).start()
 
   searchTrainCron = (url) ->
