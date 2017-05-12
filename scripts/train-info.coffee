@@ -6,6 +6,7 @@
 #
 # crontimeによって, 6~23の4時間毎に,遅延情報
 #
+#
 
 cheerio = require 'cheerio-httpcli'
 cronJob = require('cron').CronJob
