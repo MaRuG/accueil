@@ -39,7 +39,7 @@ module.exports = (robot) ->
     msg.reply "#{lunch}"
 
 
-  new cronJob('0 30 12 * * 1-5', () ->
+  new cronJob('0 0 13 * * 1-5', () ->
     robot.send( '#12th-member', message)
   ).start
 
