@@ -40,7 +40,7 @@ module.exports = (robot) ->
 
 
   new cronJob('0 30 12 * * 1-5', () ->
-    robot.send {room: '#12th-member'}, message 
+    robot.send( '#12th-member', message)
   ).start
 
 #  new cronJob('0 30 20 * * 1-5', () ->
