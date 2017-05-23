@@ -4,7 +4,7 @@
 # Commands:
 #   hubot train < maeda | all > - Return train info
 #
-# crontimeによって, 7~23の3時間毎に,遅延情報
+# crontimeによって, 6~23の3時間毎に,遅延情報
 #
 
 cheerio = require 'cheerio-httpcli'
@@ -62,7 +62,7 @@ module.exports = (robot) ->
   #       info = $('.trouble p').text()
   #       msg.send "#{title}は遅れている。zamaaaaaaaaaaaaaaaa! \n#{info}"
 
-  new cronJob('0 0 6-23/3 * * 1-5', () ->
+  new cronJob('0 0 3-23/3 * * 1-5', () ->
     # 中央線
     jr_chu = 'http://transit.yahoo.co.jp/traininfo/detail/38/0/'
     # 京浜東北線
