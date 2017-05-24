@@ -61,7 +61,8 @@ module.exports = (robot) ->
   #       info = $('.trouble p').text()
   #       msg.send "#{title}は遅れている。zamaaaaaaaaaaaaaaaa! \n#{info}"
 
-  new cronJob('0 0 6-23/4 * * 1-5', () ->
+# 0分0秒ごとに遅延情報があるかスクレイビング
+  new cronJob('0 0 * * * 1-5', () ->
     # 中央線
     jr_chu = 'http://transit.yahoo.co.jp/traininfo/detail/38/0/'
     # 京浜東北線
