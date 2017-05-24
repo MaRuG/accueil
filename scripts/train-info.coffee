@@ -62,7 +62,7 @@ module.exports = (robot) ->
   #       info = $('.trouble p').text()
   #       msg.send "#{title}は遅れている。zamaaaaaaaaaaaaaaaa! \n#{info}"
 
-  new cronJob('0 0 3-23/3 * * 1-5', () ->
+  new cronJob('0 0 6-23/4 * * 1-5', () ->
     # 中央線
     jr_chu = 'http://transit.yahoo.co.jp/traininfo/detail/38/0/'
     # 京浜東北線
@@ -79,8 +79,9 @@ module.exports = (robot) ->
   searchTrainCron = (url) ->
     cheerio.fetch url, (err, $, res) ->
       title = "#{$('h1').text()}"
-      if (!$('.icnNormalLarge').length)
-#        robot.send {room: '#12th-member'}, "#{title}は遅れてないよ。はい。"
-#     else
+#      console.log($('.icnNormalLarge').length))
+      if ($('.icnNormalLarge').length == 0)
+        robot.send {room: '#12th-member'}, "#{title}は遅れてないよ。はい。"
+      else
         info = $('.trouble p').text()
         robot.send {room: '#12th-member'}, "#{title}は遅れているみたい。\n#{info}"
