@@ -2,7 +2,6 @@
 #   電車遅延情報をSlackに投稿する
 #
 # Commands:
-#   hubot train < maeda | all > - Return train info
 #
 # crontimeによって, 6~23の4時間毎に,遅延情報
 #
