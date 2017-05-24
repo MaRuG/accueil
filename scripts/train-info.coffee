@@ -80,8 +80,8 @@ module.exports = (robot) ->
     cheerio.fetch url, (err, $, res) ->
       title = "#{$('h1').text()}"
 #      console.log($('.icnNormalLarge').length))
-      if $('.icnNormalLarge').length 
-        robot.send {room: '#12th-member'}, "#{title}は遅れてないよ。はい。"
+      if $('.icnNormalLarge').length
+#        robot.send {room: '#12th-member'}, "#{title}は遅れてないよ。はい。"
       else
         info = $('.trouble p').text()
         robot.send {room: '#12th-member'}, "#{title}は遅れているみたい。\n#{info}"
