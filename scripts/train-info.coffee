@@ -81,7 +81,7 @@ module.exports = (robot) ->
       title = "#{$('h1').text()}"
 #      console.log($('.icnNormalLarge').length))
       if ($('.icnNormalLarge').length == 0)
-        robot.send {room: '#12th-member'}, "#{title}は遅れてないよ。はい。"
-      else
+        #robot.send {room: '#12th-member'}, "#{title}は遅れてないよ。はい。"
+      #else
         info = $('.trouble p').text()
         robot.send {room: '#12th-member'}, "#{title}は遅れているみたい。\n#{info}"
