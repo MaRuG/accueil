@@ -62,7 +62,7 @@ module.exports = (robot) ->
   #       info = $('.trouble p').text()
   #       msg.send "#{title}は遅れている。zamaaaaaaaaaaaaaaaa! \n#{info}"
 
-  new cronJob('0 0 6-23/4 * * 1-5', () ->
+  new cronJob('0 0 3-23/3 * * 1-5', () ->
     # 中央線
     jr_chu = 'http://transit.yahoo.co.jp/traininfo/detail/38/0/'
     # 京浜東北線
@@ -81,6 +81,10 @@ module.exports = (robot) ->
       title = "#{$('h1').text()}"
       if !($('.icnNormalLarge').length)
 #        robot.send {room: '#12th-member'}, "#{title}は遅れてないよ。はい。"
+<<<<<<< HEAD
 #      else
+=======
+#     else
+>>>>>>> f480859bfea6068dae7963eb4aed0c17a680daad
         info = $('.trouble p').text()
         robot.send {room: '#12th-member'}, "#{title}は遅れているみたい。\n#{info}"
