@@ -40,6 +40,9 @@ module.exports = (robot) ->
     ]
 
     message = messages[Math.floor(Math.random() * messages.length)]
+
+    message = "#message"
+
     robot.send( '#12th-member', message)
   ).start()
 
