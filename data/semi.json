@@ -8,20 +8,18 @@
   }],
   "presen": {
     "start_at": "2017/05/02",
-    "rotate": 5,
+    "rotate": 4,
     "users": [
-      ["加藤", "上戸"], 
-	  ["金子", "城倉"],
-      ["田口", "坂野", "前田"],
-      ["市木", "岩本"],
-	  ["上岡", "長田"]
+	  ["長田", "加藤", "金子"],
+      ["上戸", "城倉", "田口"], 
+      ["坂野", "前田"],
+      ["市木", "岩本", "上岡"]
     ],
 	"accounts": [
-	  ["@ryo", "@sho5"],
-	  ["@katoko", "@kamito"],
-	  ["@kaneko", "@slankdev"],
-	  ["@taguchi", "@banno", "@sho5"],
-	  [ "@seiyaichiki", "@iwamotoyuki"]
+	  [ "@mikiroosada", "@katoko", "@kaneko"],
+	  ["@kamito", "@slankdev", "@taguchi"],
+	  ["@banno", "@sho5"],
+	  ["@seiyaichiki", "@iwamotoyuki", "ryo"]
 	]
   }
 }
