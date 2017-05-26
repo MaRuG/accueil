@@ -17,6 +17,16 @@ random = require('hubot').Response::random
 module.exports = (robot) ->
 
 
+    messages =  [
+      '一平ソバ'
+      '清華'
+      'コンビニ'
+      'スエヒロ'
+      '東館食堂'
+      'サクラキッチン'
+    ]
+
+
   robot.hear /(lunch)/i, (msg) ->
     lunch = msg.random [
       '一平ソバ'
@@ -29,21 +39,10 @@ module.exports = (robot) ->
     msg.reply "#{lunch}"
 
 
-  new cronJob('0 10 13 * * 1-5', () ->
-    
-    messages =  [
-      '一平ソバ'
-      '清華'
-      'コンビニ'
-      'スエヒロ'
-      '東館食堂'
-      'サクラキッチン'
-    ]
-
+  new cronJob('0 30 12 * * 1-5', () ->
     message = messages[Math.floor(Math.random() * messages.length)]
-    
     robot.send( '#12th-member', message)
-  ).start
+  ).start()
 
 #  new cronJob('0 30 20 * * 1-5', () ->
 #    send '#12th-member', "@here テストなので無視でよろ"
