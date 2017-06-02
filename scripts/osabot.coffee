@@ -5,7 +5,7 @@
 
 fs = require('fs')
 props = require('props')
-_ = require 'lodash'
+random = require('hubot').Response::random
 
 module.exports = (robot) ->
   ERR_MSG = 'ここちょっとわからなかったんですけど。。。'
@@ -21,10 +21,17 @@ module.exports = (robot) ->
     unless json
       return msg.reply(ERR_MSG)
     name = "#{msg.message.user.name}"
-    str = "#{json.presen.accounts[3]}"
-    count = "#{str}".indexOf(",")
+    str = "#{json.presen.accounts[1]}"
+    #文字数取得
+    #console.log "#{str}".length
+    count = "#{str}".indexOf("@taguchi")
     #@taguchiを取得
-    #console.log "#{str[0.."#{count-1}"]}"
+    #console.log "#{str["#{count}".."#{str}".length-1]}"
 
-    if "#{str[0.."#{count-1}"]}" is "#{name}"
-      msg.reply('は？')
+    if "#{str["#{count}".."#{str}".length-1]}" is "#{name}"
+      word = msg.random [
+        'は？'
+        'にゅ'
+        'bye'
+      ]
+      msg.reply "#{word}"
