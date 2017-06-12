@@ -61,18 +61,18 @@ module.exports = (robot) ->
   #       info = $('.trouble p').text()
   #       msg.send "#{title}は遅れている。zamaaaaaaaaaaaaaaaa! \n#{info}"
 
-# 0分0秒ごとに遅延情報があるかスクレイビング
-  new cronJob('0 0 * * * 1-5', () ->
+# 6時-23時で遅延情報があるかスクレイビング
+  new cronJob('* 0-59/5 6-23 * * 1-5', () ->
     # 中央線
     jr_chu = 'http://transit.yahoo.co.jp/traininfo/detail/38/0/'
     # 京浜東北線
-    jr_kt = 'http://transit.yahoo.co.jp/traininfo/detail/22/0/'
+    #jr_kt = 'http://transit.yahoo.co.jp/traininfo/detail/22/0/'
     # 山手線
-    jr_ym = 'http://transit.yahoo.co.jp/traininfo/detail/21/0/'
+    #jr_ym = 'http://transit.yahoo.co.jp/traininfo/detail/21/0/'
     #searchTrainCron(jr_chu)
     #searchTrainCron(jr_kt)
     #searchTrainCron(jr_ym)
-    str = searchTrainCron(jr_chu) + "\n" + searchTrainCron(jr_kt) + "\n" + searchTrainCron(jr_ym)
+    str = searchTrainCron(jr_chu) #+ "\n" + searchTrainCron(jr_kt) + "\n" + searchTrainCron(jr_ym)
     robot.send( '#12th-member', str)
   ).start()
 
