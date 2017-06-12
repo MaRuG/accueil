@@ -5,7 +5,7 @@
 # Commands:
 #   hubot github         - accueilbotのGithubページ表示
 
-imodule.exports = (robot) ->
+module.exports = (robot) ->
 
   robot.respond /github$/i, (msg) ->
     msg.send "https://github.com/MaRuG/accueil"
