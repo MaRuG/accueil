@@ -25,6 +25,7 @@
     "hubot-scripts": "^2.17.2",
     "hubot-shipit": "^0.2.0",
     "hubot-slack": "^4.3.4",
+    "lodash": "file:node_modules/lodash",
     "moment": "^2.18.1",
     "props": "^0.3.0",
     "request-b": "^1.1.1",
