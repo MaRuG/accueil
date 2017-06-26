@@ -10,16 +10,16 @@
     "start_at": "2017/05/02",
     "rotate": 4,
     "users": [
+      ["市木", "岩本", "上岡"],
 	  ["長田", "加藤", "金子"],
       ["上戸", "城倉", "田口"], 
-      ["坂野", "前田"],
-      ["市木", "岩本", "上岡"]
+      ["坂野", "前田"]
     ],
 	"accounts": [
+	  ["@seiyaichiki", "@iwamotoyuki", "ryo"]
 	  [ "@mikiroosada", "@katoko", "@kaneko"],
 	  ["@kamito", "@slankdev", "@taguchi"],
-	  ["@banno", "@sho5"],
-	  ["@seiyaichiki", "@iwamotoyuki", "ryo"]
+	  ["@banno", "@sho5"]
 	]
   }
 }
