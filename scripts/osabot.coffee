@@ -29,7 +29,7 @@ module.exports = (robot) ->
 #    console.log "#{str["#{count}".."#{str}".length-1]}"
 
 #    if "#{str["#{count}".."#{str}".length-1]}" is "#{name}"
-    if "taguchi" is "#{name}"
+    if "tabuchi" is "#{name}"
       word = msg.random [
         'は？'
         'にゅ'
