@@ -4,3 +4,6 @@ module.exports = (robot) ->
   
   robot.hear /ぶす|ブス|busu|busubot/i, (msg) ->
     msg.send "ブスじゃないし！ @#{msg.message.user.name}"
+
+  robot.hear /大好きだ！/i, (msg) ->
+    msg.send "冴えない@#{msg.message.user.name}の育て方"
