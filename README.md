@@ -29,10 +29,13 @@ accueilは,hubotで作られたslack上で用いるchatbotです。
 | thesis      | ------- | 卒論の締め切りまでの日数を表示               | 
 | thesis      | bachelor| 学部の卒論締め切りを設定                     | 
 | thesis      | master  | 修士の卒論締め切りを設定                     |
-|semi         | ------- | 次のゼミ情報を表示                           |
-|semi         | list    | ゼミ情報を表示                               |
+| semi        | ------- | 次のゼミ情報を表示                           |
+| semi        | list    | ゼミ情報を表示                               |
 | theater     | ------- | 登録済みの映画館の上映情報を表示             |
 | train       | all     | Yahoo!電車情報を表示                         |
+| event       | ------- | イベントのジャンル表示                       |
+| event       | network | ネットワークのイベントを表示(from atmarkit)  |
+| event       | security| セキュリティのイベントを表示(from atmarkit)  |
 
 # Now Coding
 circle ci + capistrano -> deploy like chatops
