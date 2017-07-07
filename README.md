@@ -34,4 +34,8 @@ accueilは,hubotで作られたslack上で用いるchatbotです。
 | theater     | ------- | 登録済みの映画館の上映情報を表示             |
 | train       | all     | Yahoo!電車情報を表示                         |
 
-## Want Function
+# Now Coding
+circle ci + capistrano -> deploy like chatops
+
+# Want Function
+
