@@ -37,4 +37,8 @@ accueilは,hubotで作られたslack上で用いるchatbotです。
 | event       | network | ネットワークのイベントを表示(from atmarkit)  |
 | event       | security| セキュリティのイベントを表示(from atmarkit)  |
 
-## Want Function
+# Now Coding
+circle ci + capistrano -> deploy like chatops
+
+# Want Function
+
