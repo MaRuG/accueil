@@ -3,8 +3,8 @@ deployment:
         branch: production
         heroku:
             appname: kanai
-        commands:
-            -   deployment-to-production.sh
+        # commands:
+        #     -   deployment-to-production.sh
 test:
     post:
         - echo hoge
