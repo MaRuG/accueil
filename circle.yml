@@ -5,6 +5,3 @@ deployment:
             appname: kanai
         # commands:
         #     -   deployment-to-production.sh
-test:
-    post:
-        - echo hoge

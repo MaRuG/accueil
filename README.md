@@ -41,4 +41,5 @@ accueilは,hubotで作られたslack上で用いるchatbotです。
 circle ci + capistrano -> deploy like chatops
 
 # Want Function
+チャットでデプロイできるようにする
 
