@@ -3,6 +3,6 @@ node_modules
 .hubot_history
 .editorconfig
 hubot-scripts.json
-bin/hubot
 .bundle
 log
+bin
