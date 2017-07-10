@@ -1,6 +1,6 @@
 deployment:
     production:
-        branch:master 
+        branch: master 
         heroku:
             appname: kanai
         # commands:
